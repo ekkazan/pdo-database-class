@@ -102,7 +102,7 @@ class Database {
    * An important method of Database class. Sets the WHERE clause
    * for select and delete methods. You can call it after
    * every other method but, you need to use it just with select and
-   * delete methods. It supports '=', 'IN' and 'LIKE' operators.
+   * delete methods. It supports '=', '>', '<', 'IN' and 'LIKE' operators.
    * 
    * Proper parameters usage: ['column_name' => ['type' => 'EQUAL'|'IN'|'LIKE', 'value' => 'VALUE']]
    * Proper parameters usage: VALUE must be array to use IN operator

@@ -1,2 +1,2 @@
 # PHP PDO Database Class
-A lightweight, basic (supports only CRUD actions) PDO database class written in PHP.
+A lightweight, basic PDO database class written in PHP.

@@ -367,6 +367,7 @@ class Database {
    */
   public function where(array $where, string $type = 'AND') {
     $i = count($this->params);
+    $clauses = [];
 
     foreach($where as $column => $inner) {
       if(is_array($inner)) {
@@ -403,16 +404,16 @@ class Database {
           $this->params[$i++] = $value;
           break;
       }
-    }
 
-    if(!$this->isWhereSet) {
-      $this->isWhereSet = TRUE;
-      $this->statement .= ' WHERE ';
-    } else {
-      $this->statement .= ' '.$type.' ';
+      if(!$this->isWhereSet) {
+        $this->isWhereSet = TRUE;
+        $this->statement .= ' WHERE ';
+      } else {
+        $this->statement .= ' AND ';
+      }
+  
+      $this->statement .= $clause;
     }
-
-    $this->statement .= $clause;
 
     return $this;
   }
@@ -462,16 +463,16 @@ class Database {
           $this->params[$i++] = $value;
           break;
       }
-    }
 
-    if(!$this->isWhereSet) {
-      $this->isWhereSet = TRUE;
-      $this->statement .= ' WHERE ';
-    } else {
-      $this->statement .= ' OR ';
+      if(!$this->isWhereSet) {
+        $this->isWhereSet = TRUE;
+        $this->statement .= ' WHERE ';
+      } else {
+        $this->statement .= ' OR ';
+      }
+  
+      $this->statement .= $clause;
     }
-
-    $this->statement .= $clause;
 
     return $this;
   }

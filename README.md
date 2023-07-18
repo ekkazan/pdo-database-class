@@ -1,4 +1,4 @@
-# PHP PDO Database Class
+# PDO Database Class
 A lightweight, basic PDO database class written in PHP.
 
 ## Usage

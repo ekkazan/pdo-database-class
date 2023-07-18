@@ -29,7 +29,7 @@ $delete = $db->database
     ->execute();  
     
 // More Advanced
-$delete = $db->database
+$query = $db->database
     ->select(['groups', 'g'], $columns) // use table alias
     ->leftJoin(['groups', 'p'], 'parent', 'id') // use table alias
     ->orderBy('g.name', 'ASC')
